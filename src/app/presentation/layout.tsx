@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { useSlide } from "@/lib/useSlide";
+import { useSlideLayout } from "@/lib/useSlide";
 import * as style from "./layout.css";
 import { useParams, usePathname } from "next/navigation";
 
@@ -10,7 +10,7 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
-  const { slide } = useSlide();
+  const slide = useSlideLayout();
   const pathname = usePathname();
 
   return (
