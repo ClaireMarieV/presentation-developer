@@ -5,7 +5,7 @@ import Definition from "@/ui/Definition";
 import * as style from "./page.css";
 
 const Slide = () => {
-  const { slide, after } = useSlide([
+  const { atleast } = useSlide([
     "développeur",
     "développement",
     "développer",
@@ -19,34 +19,58 @@ const Slide = () => {
         Personne chargée des{" "}
         <em
           className={
-            after("développeur") ? style.emphasis.on : style.emphasis.off
+            atleast("développement") ? style.emphasis.on : style.emphasis.off
           }
         >
           développements
         </em>
-        , de la programmation, dans un projet informatique.
+        , de la{" "}
+        <em
+          className={
+            atleast("programation") ? style.emphasis.on : style.emphasis.off
+          }
+        >
+          programmation
+        </em>
+        , dans un projet informatique.
       </Definition>
 
-      {after("développeur") && (
+      {atleast("développement") && (
         <Definition word="Développement">
-          Action de développer, de se développer ou résultat de cette action, au
-          propre et au figuré.
+          Action de{" "}
+          <em
+            className={
+              atleast("développer") ? style.emphasis.on : style.emphasis.off
+            }
+          >
+            développer
+          </em>
+          , de se développer ou résultat de cette action, au propre et au
+          figuré.
         </Definition>
       )}
 
-      {after("développement") && (
+      {atleast("développer") && (
         <Definition word="Développer">
           Réaliser, implanter, implémenter (un programme).
         </Definition>
       )}
 
-      {after("développer") && (
+      {atleast("programation") && (
         <Definition word="Programmation">
-          Réalisation d&apos;un programme informatique.
+          Réalisation d&apos;un programme{" "}
+          <em
+            className={
+              atleast("informatique") ? style.emphasis.on : style.emphasis.off
+            }
+          >
+            informatique
+          </em>
+          .
         </Definition>
       )}
 
-      {after("programation") && (
+      {atleast("informatique") && (
         <Definition word="Informatique">
           Science du traitement automatique de l’information.
         </Definition>

@@ -59,6 +59,13 @@ export const useSlide = <Slide extends string>(slides?: Array<Slide>) => {
         : false,
     [localSlides]
   );
+  const atleast = useCallback(
+    (slide: Slide) =>
+      localSlides.length > 0
+        ? localSlides.indexOf(slide) <= index.current
+        : false,
+    [localSlides]
+  );
 
   useEffect(() => {
     document.addEventListener("click", next);
@@ -70,5 +77,5 @@ export const useSlide = <Slide extends string>(slides?: Array<Slide>) => {
     };
   });
 
-  return { slide, before, after };
+  return { slide, before, after, atleast };
 };

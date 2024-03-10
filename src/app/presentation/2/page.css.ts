@@ -8,5 +8,5 @@ const emphasisBase = style({
 
 export const emphasis = styleVariants({
   off: [emphasisBase, { fontWeight: 400 }],
-  on: [emphasisBase, { fontWeight: 600 }],
+  on: [emphasisBase, { fontWeight: 700 }],
 });
