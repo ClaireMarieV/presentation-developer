@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import { theme } from "@/ui/theme.css";
 
 export const layout = style({
   width: "100vw",
@@ -8,5 +9,12 @@ export const layout = style({
   justifyContent: "center",
   alignItems: "center",
   textAlign: "center",
-  gap: "5vh",
+  gap: theme.spacing.large,
+});
+
+export const debug = style({
+  position: "absolute",
+  left: 0,
+  top: 0,
+  padding: theme.spacing.medium,
 });
