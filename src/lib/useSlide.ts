@@ -4,37 +4,45 @@ import { create } from "zustand";
 type SlideState = {
   slides: Array<string>;
   setSlides: (slides: Array<string>) => void;
+  slide: string;
+  setSlide: (slide: string) => void;
 };
 
 const useSlideStore = create<SlideState>()((set) => ({
   slides: [],
-  setSlides: (slides) => set({ slides }),
+  setSlides: (slides) => set({ slides, slide: slides[0] }),
+  slide: "",
+  setSlide: (slide) => set({ slide }),
 }));
 
 export const useSlide = <Slide extends string>(slides?: Array<Slide>) => {
   const index = useRef(0);
 
-  const { slides: localSlides, setSlides } = useSlideStore();
-
-  const [slide, setSlide] = useState(localSlides[index.current]);
+  const { slides: localSlides, setSlides, slide, setSlide } = useSlideStore();
 
   useEffect(() => {
     if (slides && JSON.stringify(slides) !== JSON.stringify(localSlides)) {
       setSlides(slides);
+      index.current = 0;
     }
-  }, [localSlides, setSlides, slides]);
+  }, [localSlides, setSlide, setSlides, slides]);
 
   const next = useCallback(() => {
-    index.current = Math.min(index.current + 1, localSlides.length - 1);
-    setSlide(localSlides[index.current]);
-  }, [localSlides]);
+    if (localSlides.length > 0) {
+      index.current = Math.min(index.current + 1, localSlides.length - 1);
+      setSlide(localSlides[index.current]);
+    }
+  }, [localSlides, setSlide]);
   const previous = useCallback(
     (event: MouseEvent) => {
       event.preventDefault();
-      index.current = Math.max(index.current - 1, 0);
-      setSlide(localSlides[index.current]);
+
+      if (localSlides.length > 0) {
+        index.current = Math.max(index.current - 1, 0);
+        setSlide(localSlides[index.current]);
+      }
     },
-    [localSlides]
+    [localSlides, setSlide]
   );
 
   const before = useCallback(
