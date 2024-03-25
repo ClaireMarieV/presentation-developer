@@ -11,3 +11,13 @@ globalStyle("h1", {
   fontSize: "4vh",
   textWrap: "balance",
 });
+
+globalStyle("h2", {
+  fontSize: "3vh",
+  textWrap: "balance",
+});
+
+globalStyle("p", {
+  fontSize: "2vh",
+  textWrap: "balance",
+});

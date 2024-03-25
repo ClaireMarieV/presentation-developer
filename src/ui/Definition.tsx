@@ -8,7 +8,7 @@ type DefinitionProps = {
 
 const Definition = ({ word, children }: DefinitionProps) => (
   <div className={style.wrapper}>
-    <h3>{word}</h3>
+    <h2>{word}</h2>
     <p>{children}</p>
   </div>
 );
