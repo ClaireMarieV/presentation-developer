@@ -15,13 +15,20 @@ export const page = style({
   gap: theme.spacing.large,
 });
 
-export const notes = style({
-  gridColumn: "1 / span 2",
+const box = style({
   border: theme.border,
   borderRadius: theme.borderRadius,
-  padding: theme.spacing.medium,
-  fontSize: "1.5rem",
+  background: theme.colors.background.element,
 });
+
+export const notes = style([
+  box,
+  {
+    gridColumn: "1 / span 2",
+    padding: theme.spacing.medium,
+    fontSize: "1.5rem",
+  },
+]);
 
 export const list = style({
   display: "flex",
@@ -29,12 +36,13 @@ export const list = style({
   gap: theme.spacing.medium,
 });
 
-const iframe = style({
-  border: theme.border,
-  borderRadius: theme.borderRadius,
-  width: "100%",
-  height: "100%",
-});
+const iframe = style([
+  box,
+  {
+    width: "100%",
+    height: "100%",
+  },
+]);
 
 export const current = style([iframe, {}]);
 

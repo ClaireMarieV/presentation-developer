@@ -11,6 +11,7 @@ export const [themClass, theme] = createTheme({
   colors: {
     background: {
       default: "#111111",
+      element: "#141A15",
     },
     foreground: {
       default: "white",
