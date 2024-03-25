@@ -6,7 +6,11 @@ const Slide = () => {
 
   return (
     <>
-      <h1>Qu&apos;est-ce qu&apos;une développeuse/un développeur ?</h1>
+      <h1>
+        Qu&apos;est-ce qu&apos;une développeuse
+        <br />
+        Qu&apos;est qu&apos;un développeur ?
+      </h1>
       <QRCode
         link={`http${
           process.env.NODE_ENV !== "development" ? "s" : ""

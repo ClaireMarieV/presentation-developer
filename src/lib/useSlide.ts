@@ -7,8 +7,8 @@ type SlideState = {
   setSlides: (slides: Array<string>) => void;
   index: number;
   setIndex: (index: number) => void;
-  slide: string;
-  setSlide: (slide: string) => void;
+  slide: string | null;
+  setSlide: (slide: string | null) => void;
 };
 
 const useSlideStore = create<SlideState>()((set) => ({
@@ -24,7 +24,8 @@ export const useSlideLayout = () => {
   const slideNumber = parseInt(usePathname().split("/").at(-1)!);
   const router = useRouter();
 
-  const { slide, slides, setSlide, index, setIndex } = useSlideStore();
+  const { slide, slides, setSlide, setSlides, index, setIndex } =
+    useSlideStore();
 
   useEffect(() => {
     const next = () => {
@@ -32,17 +33,19 @@ export const useSlideLayout = () => {
         router.push((slideNumber + 1).toString());
       } else {
         setIndex(index + 1);
-        setSlide(slides[index + 1]);
+        setSlide(slides[index + 1] || null);
       }
     };
     const previous = (event: MouseEvent) => {
       event.preventDefault();
 
       if (index <= 0) {
-        router.push((slideNumber - 1).toString());
+        if (slideNumber > 1) {
+          router.push((slideNumber - 1).toString());
+        }
       } else {
         setIndex(index - 1);
-        setSlide(slides[index - 1]);
+        setSlide(slides[index - 1] || null);
       }
     };
 
@@ -53,7 +56,7 @@ export const useSlideLayout = () => {
       document.removeEventListener("click", next);
       document.removeEventListener("contextmenu", previous);
     };
-  }, [index, router, setIndex, setSlide, slideNumber, slides]);
+  }, [index, router, setIndex, setSlide, setSlides, slideNumber, slides]);
 
   return slide;
 };
@@ -71,8 +74,19 @@ export const useSlide = <Slide extends string>(slides: Array<Slide>) => {
   useEffect(() => {
     if (JSON.stringify(slides) !== JSON.stringify(storeSlides)) {
       setSlides(slides);
+      setIndex(0);
+      setSlide(slides[0]);
     }
   }, [setIndex, setSlide, setSlides, slides, storeSlides]);
+
+  useEffect(
+    () => () => {
+      setIndex(0);
+      setSlides([]);
+      setSlide(null);
+    },
+    [setIndex, setSlide, setSlides]
+  );
 
   const before = useCallback(
     (slide: Slide) => storeSlides.indexOf(slide) > index,
