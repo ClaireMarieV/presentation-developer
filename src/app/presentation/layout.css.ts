@@ -10,6 +10,7 @@ export const layout = style({
   alignItems: "center",
   textAlign: "center",
   gap: theme.spacing.large,
+  background: "white",
 });
 
 export const debug = style({

@@ -5,7 +5,7 @@ import * as style from "./page.css";
 
 const presentationNotes = {
   1: (
-    <ul>
+    <ul className={style.list}>
       <li>Bonjour</li>
       <li>
         Vous pouvez scanner le QR code pour répondre à un court questionnaire
@@ -17,12 +17,12 @@ const presentationNotes = {
     </ul>
   ),
   2: (
-    <ul>
+    <ul className={style.list}>
       <li>Le mot développeur est un anglicisme</li>
     </ul>
   ),
   3: (
-    <ul>
+    <ul className={style.list}>
       <li>La définition n&apos;est pas super satisfaisante</li>
       <li>(Montrer les résultats du questionnaire)</li>
       <li>C&apos;est le problème des définitions</li>
@@ -42,7 +42,7 @@ const presentationNotes = {
     </ul>
   ),
   4: (
-    <ul>
+    <ul className={style.list}>
       <li>Ca fait un peu tôt, et pas sur que ça parle de programmation 😁</li>
       <li>
         On rappelle quand même qu&apos;Ada Lovelace écrit le premier programme
@@ -81,7 +81,26 @@ const presentationNotes = {
         Parce que oui, à l&apos;époque hardware et software ça allait de paire,
         il n&apos;y avait pas d&apos;ordinateur générique
       </li>
-      <li>Bon, et en france ?</li>
+      <li>
+        Ca nous donne une idée de son utilisation en anglais, et en français ?
+      </li>
+    </ul>
+  ),
+  5: (
+    <ul className={style.list}>
+      <li>Je n&apos;ai rien trouvé</li>
+      <li>Du côté des entreprises, il y a eu Bull, fondé en 1930</li>
+      <li>
+        Ils faisaient leurs propres machines, puis ils ont fini par faire du
+        logiciel
+      </li>
+      <li>C&apos;était des concurents sérieux à IBM</li>
+      <li>
+        On n&apos;a pas vraiment de grande entreprise de la tech en france
+      </li>
+      <li>
+        En tous cas, pas jusque récemment (Dassault Systèmes, Worldline, Talend)
+      </li>
     </ul>
   ),
 };
@@ -91,9 +110,15 @@ const Notes = () => {
 
   return (
     <main className={style.page}>
-      <div>{notes}</div>
-      <iframe src={`/presentation/${page}?communication=false`} />
-      <iframe src={`/presentation/${page + 1}?communication=false`} />
+      <div className={style.notes}>{notes}</div>
+      <iframe
+        src={`/presentation/${page}?communication=false`}
+        className={style.current}
+      />
+      <iframe
+        src={`/presentation/${page + 1}?communication=false`}
+        className={style.next}
+      />
     </main>
   );
 };
