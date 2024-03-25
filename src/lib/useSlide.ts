@@ -1,4 +1,4 @@
-import { usePathname, useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { create } from "zustand";
 
@@ -23,6 +23,7 @@ const useSlideStore = create<SlideState>()((set) => ({
 export const useSlideLayout = () => {
   const slideNumber = parseInt(usePathname().split("/").at(-1)!);
   const router = useRouter();
+  const { final } = useParams();
 
   const { slide, slides, setSlide, setSlides, index, setIndex } =
     useSlideStore();
@@ -30,7 +31,9 @@ export const useSlideLayout = () => {
   useEffect(() => {
     const next = () => {
       if (index >= slides.length - 1) {
-        router.push((slideNumber + 1).toString());
+        if (!final) {
+          router.push((slideNumber + 1).toString());
+        }
       } else {
         setIndex(index + 1);
         setSlide(slides[index + 1] || null);
@@ -56,7 +59,16 @@ export const useSlideLayout = () => {
       document.removeEventListener("click", next);
       document.removeEventListener("contextmenu", previous);
     };
-  }, [index, router, setIndex, setSlide, setSlides, slideNumber, slides]);
+  }, [
+    index,
+    router,
+    setIndex,
+    setSlide,
+    setSlides,
+    slideNumber,
+    slides,
+    final,
+  ]);
 
   return slide;
 };
