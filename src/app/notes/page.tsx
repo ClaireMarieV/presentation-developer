@@ -43,29 +43,45 @@ const presentationNotes = {
   ),
   4: (
     <ul>
-      <li>Pas le bon</li>
+      <li>Ca fait un peu tôt, et pas sur que ça parle de programmation 😁</li>
+      <li>
+        On rappelle quand même qu&apos;Ada Lovelace écrit le premier programme
+        du monde en 1843
+      </li>
       <li>
         Mais le verbe &quot;to develop&quot; signifie &quot;créer ou produire
         par un effort délibéré sur une période de temps&quot;
       </li>
       <li>(Oui, on en revient aux définitions)</li>
       <li>
-        On a en 1905, une utilisation qui commence à s&quot;en approcher :
+        On a en 1905, une utilisation qui commence à s&apos;en approcher :
       </li>
       <li>
         [O]ur chairman, the reinventor and the leading developer of the
         spectroheliograph
       </li>
       <li>
-        Mais on ne parle pas encore d&quot;informatique, même si on touche au
+        Mais on ne parle pas encore d&apos;informatique, même si on touche au
         technique
       </li>
-      <li>En 1961, enfin, dans un magazine d&quot;Arizona :</li>
+      <li>En 1961, enfin, dans un magazine d&apos;Arizona :</li>
       <li>
         Roderick D. McIver, program <strong>developer</strong> for the GE
         computer group will be host.
       </li>
-      <li>Aucune info sur lui cependant 😄</li>
+      <li>
+        Je n&apos;ai pas réussi à trouver d&apos;infos sur lui cependant 😄
+      </li>
+      <li>
+        Par contre GE Computer est un compétiteur d&apos;IBM à l&apos;époque, et
+        ils ont mis en place un ordinateur et programme de vérification de
+        chèques en 59
+      </li>
+      <li>
+        Parce que oui, à l&apos;époque hardware et software ça allait de paire,
+        il n&apos;y avait pas d&apos;ordinateur générique
+      </li>
+      <li>Bon, et en france ?</li>
     </ul>
   ),
 };

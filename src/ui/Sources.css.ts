@@ -6,7 +6,7 @@ export const wrapper = style({
   flexDirection: "column",
   gap: theme.spacing.medium,
   alignItems: "flex-start",
-  fontSize: "0.6rem",
+  fontSize: "1vh",
 
   position: "absolute",
   bottom: 0,
