@@ -101,16 +101,16 @@ export const useSlide = <Slide extends string>(slides: Array<Slide>) => {
   );
 
   const before = useCallback(
-    (slide: Slide) => storeSlides.indexOf(slide) > index,
-    [index, storeSlides]
+    (slide: Slide) => slides.indexOf(slide) > index,
+    [index, slides]
   );
   const after = useCallback(
-    (slide: Slide) => storeSlides.indexOf(slide) < index,
-    [index, storeSlides]
+    (slide: Slide) => slides.indexOf(slide) < index,
+    [index, slides]
   );
   const atleast = useCallback(
-    (slide: Slide) => storeSlides.indexOf(slide) <= index,
-    [index, storeSlides]
+    (slide: Slide) => slides.indexOf(slide) <= index,
+    [index, slides]
   );
 
   return { slide, before, after, atleast };
