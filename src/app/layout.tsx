@@ -6,7 +6,7 @@ import "./layout.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Qu'est-ce qu'une développeuse/un développeur ?",
+  title: "Qu'est-ce qu'une développeuse, qu'est-ce qu'un développeur ?",
 };
 
 export default function RootLayout({
