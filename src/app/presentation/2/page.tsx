@@ -3,13 +3,14 @@
 import { useSlide } from "@/lib/useSlide";
 import Definition from "@/ui/Definition";
 import * as style from "./page.css";
+import Sources from "@/ui/Sources";
 
 const Slide = () => {
   const { atleast } = useSlide([
     "développeur",
     "développement",
     "développer",
-    "programation",
+    "programmation",
     "informatique",
   ]);
 
@@ -27,7 +28,7 @@ const Slide = () => {
         , de la{" "}
         <em
           className={
-            atleast("programation") ? style.emphasis.on : style.emphasis.off
+            atleast("programmation") ? style.emphasis.on : style.emphasis.off
           }
         >
           programmation
@@ -56,7 +57,7 @@ const Slide = () => {
         </Definition>
       )}
 
-      {atleast("programation") && (
+      {atleast("programmation") && (
         <Definition word="Programmation">
           Réalisation d&apos;un programme{" "}
           <em
@@ -75,6 +76,16 @@ const Slide = () => {
           Science du traitement automatique de l’information.
         </Definition>
       )}
+
+      <Sources
+        sources={[
+          "Wiktionnaire - développeur",
+          atleast("développement") ? "Wiktionnaire - développement" : null,
+          atleast("développer") ? "Wiktionnaire - développer" : null,
+          atleast("programmation") ? "Wiktionnaire - programmation" : null,
+          atleast("informatique") ? "Wiktionnaire - informatique" : null,
+        ]}
+      />
     </>
   );
 };

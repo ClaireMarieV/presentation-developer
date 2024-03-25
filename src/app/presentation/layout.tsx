@@ -2,15 +2,19 @@
 
 import { ReactNode } from "react";
 import { useSlideLayout } from "@/lib/useSlide";
+import { usePathname, useSearchParams } from "next/navigation";
 import * as style from "./layout.css";
-import { useParams, usePathname } from "next/navigation";
 
 type LayoutProps = {
   children: ReactNode;
 };
 
 const Layout = ({ children }: LayoutProps) => {
-  const slide = useSlideLayout();
+  const communication = useSearchParams().get("communication") !== "false";
+
+  const slide = useSlideLayout({
+    communication,
+  });
   const pathname = usePathname();
 
   return (

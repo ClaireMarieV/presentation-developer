@@ -1,5 +1,5 @@
 import { useParams, usePathname, useRouter } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { create } from "zustand";
 
 type SlideState = {
@@ -20,10 +20,31 @@ const useSlideStore = create<SlideState>()((set) => ({
   setSlide: (slide) => set({ slide }),
 }));
 
-export const useSlideLayout = () => {
+const useChannel = () => {
+  const [channel, setChannel] = useState<null | BroadcastChannel>(null);
+
+  useEffect(() => {
+    const channel = new BroadcastChannel("slides");
+    setChannel(channel);
+
+    return () => channel.close();
+  }, []);
+
+  return channel;
+};
+
+type UseSlideLayoutParameters = {
+  communication?: boolean;
+};
+
+export const useSlideLayout = (
+  { communication = true }: UseSlideLayoutParameters = { communication: true }
+) => {
   const slideNumber = parseInt(usePathname().split("/").at(-1)!);
   const router = useRouter();
   const { final } = useParams();
+
+  const channel = useChannel();
 
   const { slide, slides, setSlide, setSlides, index, setIndex } =
     useSlideStore();
@@ -68,7 +89,14 @@ export const useSlideLayout = () => {
     slideNumber,
     slides,
     final,
+    channel,
   ]);
+
+  useEffect(() => {
+    if (communication) {
+      channel?.postMessage({ page: slideNumber, slide });
+    }
+  }, [channel, communication, slide, slideNumber]);
 
   return slide;
 };
@@ -114,4 +142,24 @@ export const useSlide = <Slide extends string>(slides: Array<Slide>) => {
   );
 
   return { slide, before, after, atleast };
+};
+
+type Notes = Record<number, ReactNode>;
+
+export const useNotes = ({ notes }: { notes: Notes }) => {
+  const channel = useChannel();
+
+  const [page, setPage] = useState(1);
+  const [slide, setSlide] = useState<null | string>(null);
+
+  useEffect(() => {
+    if (channel) {
+      channel.onmessage = ({ data: { page, slide } }) => {
+        setPage(page);
+        setSlide(slide);
+      };
+    }
+  }, [channel]);
+
+  return { page, slide, notes: notes[page] };
 };
