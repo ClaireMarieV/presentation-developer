@@ -24,9 +24,15 @@ const box = style({
 export const notes = style([
   box,
   {
-    gridColumn: "1 / span 2",
     padding: theme.spacing.medium,
     fontSize: "1.5rem",
+  },
+]);
+
+export const answers = style([
+  box,
+  {
+    padding: theme.spacing.medium,
   },
 ]);
 

@@ -2,6 +2,7 @@
 
 import { useNotes } from "@/lib/useSlide";
 import * as style from "./page.css";
+import Answers from "@/ui/Answers";
 
 const presentationNotes = {
   1: (
@@ -111,6 +112,9 @@ const Notes = () => {
   return (
     <main className={style.page}>
       <div className={style.notes}>{notes}</div>
+      <div className={style.answers}>
+        <Answers />
+      </div>
       <iframe
         src={`/presentation/${page}?communication=false`}
         className={style.current}
