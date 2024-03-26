@@ -14,7 +14,7 @@ const Slide = () => {
       <QRCode
         link={`http${
           process.env.NODE_ENV !== "development" ? "s" : ""
-        }://${host}/questionnaires`}
+        }://${host}/questionnaire`}
       />
     </>
   );
