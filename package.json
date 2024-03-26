@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "vercel-build": "prisma generate && next build && prisma migrate deploy",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "nodemon --ext json,ts,tsx --exec \"npx tsc --noEmit || exit 1\""
