@@ -43,6 +43,7 @@ export const answer = style({
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between",
+  gap: theme.spacing.medium,
   padding: theme.spacing.small,
   selectors: {
     "&:not(:first-of-type)": {
