@@ -1,7 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useSlide } from "@/lib/useSlide";
 import Sources from "@/ui/Sources";
+import Points from "@/ui/Points";
 
 const Slide = () => {
   const { atleast } = useSlide([
@@ -14,9 +16,13 @@ const Slide = () => {
 
   return (
     <>
-      <h1>1772 - Historical Description of Canterbury Cathedral</h1>
-      {atleast("1905") && <h1>1905 - Popular Science Monthly</h1>}
-      {atleast("1961") && <h1>1961 - Arizona Republic</h1>}
+      <Points
+        points={[
+          "1772 - Historical Description of Canterbury Cathedral",
+          atleast("1905") ? "1905 - Popular Science Monthly" : null,
+          atleast("1961") ? "1961 - Arizona Republic" : null,
+        ]}
+      />
 
       <Sources
         sources={[

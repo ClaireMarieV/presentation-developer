@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import { useSlideLayout } from "@/lib/useSlide";
 import { usePathname, useSearchParams } from "next/navigation";
 import * as style from "./layout.css";
+import { AnimatePresence } from "framer-motion";
 
 type LayoutProps = {
   children: ReactNode;
@@ -24,7 +25,7 @@ const Layout = ({ children }: LayoutProps) => {
           {pathname.split("/").at(-1)} - {slide}
         </div>
       )}
-      {children}
+      <AnimatePresence>{children}</AnimatePresence>
     </main>
   );
 };

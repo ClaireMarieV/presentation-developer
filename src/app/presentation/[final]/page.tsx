@@ -1,3 +1,5 @@
-const NotFound = () => <h1>Des questions ?</h1>;
+import Points from "@/ui/Points";
+
+const NotFound = () => <Points points={["Des questions ?"]} />;
 
 export default NotFound;

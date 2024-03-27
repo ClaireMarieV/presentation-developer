@@ -1,6 +1,7 @@
 "use client";
 
 import { useSlide } from "@/lib/useSlide";
+import Points from "@/ui/Points";
 import Sources from "@/ui/Sources";
 
 const Slide = () => {
@@ -8,7 +9,7 @@ const Slide = () => {
 
   return (
     <>
-      <h1>😔</h1>
+      <Points points={["😔"]} />
 
       <Sources
         sources={[

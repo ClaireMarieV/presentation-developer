@@ -11,6 +11,7 @@ export const layout = style({
   textAlign: "center",
   gap: theme.spacing.large,
   background: "white",
+  userSelect: "none",
 });
 
 export const debug = style({
