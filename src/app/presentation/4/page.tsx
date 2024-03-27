@@ -27,7 +27,7 @@ const Slide = () => {
       <Sources
         sources={[
           "Oxford English Dictionary - developer",
-          atleast("ada lovelace") ? "Wikipedia / Ada Lovelace" : null,
+          atleast("ada lovelace") ? "Wikipedia - Ada Lovelace" : null,
           atleast("1905") ? "StackExchange / History" : null,
           atleast("ge computer") ? "Computer History Museum" : null,
           atleast("ge computer")
