@@ -20,3 +20,26 @@ export const POST = visitor(async ({ name }) => {
     })
   );
 }, z.object({ name: z.string().min(1) }));
+
+export const GET = visitor(
+  async ({ userId }) => {
+    if (userId) {
+      return Result.ok(await prisma.user.findUnique({ where: { id: userId } }));
+    }
+
+    const userCount = await prisma.user.count();
+    // We skip a user to skip the presenter
+    const skip = Math.floor(Math.random() * (userCount - 1)) + 1;
+
+    return Result.ok(
+      await prisma.user.findFirst({
+        take: 1,
+        skip: skip,
+        where: { name: { not: null } },
+      })
+    );
+  },
+  z.object({
+    userId: z.string().uuid().optional(),
+  })
+);

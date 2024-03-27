@@ -34,10 +34,10 @@ const Answers = ({ slides = false }: AnswersProps) => {
   const [, , questions, refresh] = useQuery<Questionnaire>("/api/questions");
 
   useEffect(() => {
-    const interval = setInterval(refresh, 5000);
+    const interval = setInterval(refresh, slides ? 2000 : 5000);
 
     return () => clearInterval(interval);
-  }, [refresh]);
+  }, [refresh, slides]);
 
   const respondents =
     questions

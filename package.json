@@ -20,7 +20,7 @@
     "qrcode": "^1.5.3",
     "react": "^18",
     "react-dom": "^18",
-    "valentin": "^1.6.1",
+    "valentin": "^1.6.2",
     "zod": "^3.22.4",
     "zustand": "^4.5.2"
   },
