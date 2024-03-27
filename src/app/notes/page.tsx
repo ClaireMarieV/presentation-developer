@@ -15,7 +15,7 @@ const presentationNotes = {
       <li>A la fin, il y a un ticket pour une conférence à gagner</li>
       <li>Désolé, je n&apos;ai pas eu le temps de faire le thème light</li>
       <li>Le gagnant sera tiré au sort à la fin de la présentation</li>
-      <li>Restez concentrés sur la présentation quand même 😄</li>
+      <li>⏭️ Restez concentrés sur la présentation quand même 😄</li>
       <li>
         Bon, donc on va se pencher sur la définition d&apos;un développeur
       </li>
@@ -31,18 +31,18 @@ const presentationNotes = {
       </li>
       <li>Bon, ok, mais du coup c&apos;est quoi un développement ?</li>
       <li>
-        Action de développer, de se développer ou résultat de cette action, au
-        propre et au figuré.
+        ⏭️ Action de développer, de se développer ou résultat de cette action,
+        au propre et au figuré.
       </li>
       <li>Développer ça veut dire quoi ?</li>
-      <li>Réaliser, implanter, implémenter (un programme).</li>
+      <li>⏭️ Réaliser, implanter, implémenter (un programme).</li>
       <li>
         Ca nous avance pas trop, alors on va regarder ce que c&apos;est la
         programmation
       </li>
-      <li>Réalisation d&apos;un programme informatique</li>
+      <li>⏭️ Réalisation d&apos;un programme informatique</li>
       <li>Et l&apos;informatique ?</li>
-      <li>Science du traitement automatique de l’information.</li>
+      <li>⏭️ Science du traitement automatique de l’information.</li>
       <li>Ok, donc ça nous donne</li>
     </ul>
   ),
@@ -54,6 +54,10 @@ const presentationNotes = {
       </li>
       <li>Je ne sais pas pour vous mais</li>
       <li>La définition n&apos;est pas super satisfaisante</li>
+      <li>
+        Elle correspond à peu prêt, mais c&apos;est pas exactement ça non plus,
+        il manque un truc
+      </li>
       <li>C&apos;est le problème des définitions</li>
       <li>
         La définition d&apos;un mot au moyen d&apos;autres mots mène à une
@@ -61,8 +65,8 @@ const presentationNotes = {
       </li>
       <li>Surtout, ça ne correspond pas à votre resenti de développeur</li>
       <li>
-        Wittgenstein propose d&apos;identifier la signification d&apos;un mot à
-        son usage
+        ⏭️ Wittgenstein propose d&apos;identifier la signification d&apos;un mot
+        à son usage
       </li>
       <li>
         On a vu donc que le mot venait de l&apos;anglais, donc on peut commencer
@@ -74,8 +78,8 @@ const presentationNotes = {
     <ul className={style.list}>
       <li>Ca fait un peu tôt, et pas sur que ça parle de programmation 😁</li>
       <li>
-        On rappelle quand même qu&apos;Ada Lovelace écrit le premier programme
-        du monde en 1843
+        ⏭️ On rappelle quand même qu&apos;Ada Lovelace écrit le premier
+        programme du monde en 1843
       </li>
       <li>
         Mais le verbe &quot;to develop&quot; signifie &quot;créer ou produire
@@ -83,7 +87,10 @@ const presentationNotes = {
       </li>
       <li>(Oui, on en revient aux définitions)</li>
       <li>
-        On a en 1905, une utilisation qui commence à s&apos;en approcher :
+        Donc c&apos;est un peu flou, et forcément ça englobe beaucoup de choses
+      </li>
+      <li>
+        ⏭️ On a en 1905, une utilisation qui commence à s&apos;en approcher :
       </li>
       <li>
         [O]ur chairman, the reinventor and the leading developer of the
@@ -93,7 +100,7 @@ const presentationNotes = {
         Mais on ne parle pas encore d&apos;informatique, même si on touche au
         technique
       </li>
-      <li>En 1961, enfin, dans un magazine d&apos;Arizona :</li>
+      <li>⏭️ En 1961, enfin, dans un magazine d&apos;Arizona :</li>
       <li>
         Roderick D. McIver, program <strong>developer</strong> for the GE
         computer group will be host.
@@ -102,8 +109,8 @@ const presentationNotes = {
         Je n&apos;ai pas réussi à trouver d&apos;infos sur lui cependant 😄
       </li>
       <li>
-        Par contre GE Computer est un compétiteur d&apos;IBM à l&apos;époque, et
-        ils ont mis en place un ordinateur et programme de vérification de
+        ⏭️ Par contre GE Computer est un compétiteur d&apos;IBM à l&apos;époque,
+        et ils ont mis en place un ordinateur et programme de vérification de
         chèques en 59
       </li>
       <li>
@@ -118,7 +125,11 @@ const presentationNotes = {
   5: (
     <ul className={style.list}>
       <li>Je n&apos;ai rien trouvé</li>
-      <li>Du côté des entreprises, il y a eu Bull, fondé en 1930</li>
+      <li>Personne ne s&apos;est intéressé au sujet</li>
+      <li>
+        ⏭️ On peut quand même voir du côté des entreprises, il y a eu Bull,
+        fondé en 1930
+      </li>
       <li>
         Ils faisaient leurs propres machines, puis ils ont fini par faire du
         logiciel
@@ -169,10 +180,11 @@ const presentationNotes = {
   ),
   7: (
     <ul>
-      <li>On a la définition scolaire</li>
+      <li>Du coup on a la définition scolaire</li>
       <li>On a la définition historique, par l&apos;exemple</li>
-      <li>On a votre définition</li>
-      <li>On a votre quotidien</li>
+      <li>⏭️ En gros, si on résume les exemples, ça donne ça</li>
+      <li>⏭️ On a votre définition</li>
+      <li>⏭️ On a votre quotidien</li>
 
       <li>
         <strong>Si comme prévu :</strong>
@@ -185,14 +197,14 @@ const presentationNotes = {
     <ul>
       <li>Il créé et maintient des programmes</li>
       <li>Mais surtout</li>
-      <li>C&apos;est un professionnel</li>
+      <li>⏭️ C&apos;est un professionnel</li>
       <li>Et en particulier</li>
-      <li>C&apos;est un prolétaire</li>
+      <li>⏭️ C&apos;est un prolétaire</li>
+      <li>Là vous vous demandez d&apos;où ça sort</li>
       <li>
         Pour rappel, la définition : Personne qui ne possède pour vivre que les
         revenus que lui procure une activité salariée.
       </li>
-      <li>Là vous vous demandez d&apos;où ça sort</li>
       <li>On est tous fier de notre métier, de notre savoir faire</li>
       <li>
         Nous avons une connaissance technique qui n&apos;est pas facile à saisir
@@ -225,7 +237,7 @@ const presentationNotes = {
       <li>Il faut pousser pour faire ça, ça doit être une démarche active</li>
       <li>
         Donc n&apos;hésitez pas à être clair à votre prochain 1-1 quand à ce que
-        vous attendez de l&apos;entreprise qui vous emploi
+        vous attendez de l&apos;entreprise qui vous emploie
       </li>
       <li>Voilà, merci</li>
     </ul>
