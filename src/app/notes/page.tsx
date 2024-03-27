@@ -13,6 +13,7 @@ const presentationNotes = {
         pour la présentation
       </li>
       <li>A la fin, il y a un ticket pour une conférence à gagner</li>
+      <li>Désolé, je n&apos;ai pas eu le temps de faire le thème light</li>
       <li>Le gagnant sera tiré au sort à la fin de la présentation</li>
       <li>Restez concentrés sur la présentation quand même 😄</li>
       <li>

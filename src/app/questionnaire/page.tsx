@@ -13,6 +13,9 @@ const getQuestions = async (userId: string) =>
     },
   });
 
+const getUserName = async (userId: string) =>
+  (await prisma.user.findUnique({ where: { id: userId } }))?.name || "";
+
 const QuestionnairePage = async () => {
   let userId = cookies().get("userId")?.value;
   let newUserId = null;
@@ -22,12 +25,13 @@ const QuestionnairePage = async () => {
   }
 
   const questions = await getQuestions(userId);
+  const name = await getUserName(userId);
 
   return (
     <main className={style.page}>
       {newUserId && <SetUserIdCookie userId={newUserId} />}
 
-      <Questionnaire questionnaire={questions} />
+      <Questionnaire questionnaire={questions} initialName={name} />
     </main>
   );
 };

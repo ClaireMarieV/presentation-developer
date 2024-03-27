@@ -15,9 +15,13 @@ export const [themClass, theme] = createTheme({
       element: "#191919",
       selected: "#222222",
       hover: "#2A2A2A",
+      accent: "#30A46C",
+      disabled: "#B4B4B4",
     },
     foreground: {
       default: "white",
+      accent: "#30A46C",
+      disabled: "#484848",
     },
   },
 });

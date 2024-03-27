@@ -4,6 +4,7 @@ import { useState } from "react";
 import RadioGroup from "./RadioGroup";
 import * as style from "./Questionnaire.css";
 import { useMutation } from "valentin";
+import Rafle from "./Rafle";
 
 type QuestionProps = {
   question: {
@@ -69,9 +70,10 @@ type QuestionnaireProps = {
       optionId: string;
     }>;
   }>;
+  initialName: string;
 };
 
-const Questionnaire = ({ questionnaire }: QuestionnaireProps) => {
+const Questionnaire = ({ questionnaire, initialName }: QuestionnaireProps) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(
     questionnaire
       .sort((a, b) => a.position - b.position)
@@ -90,6 +92,10 @@ const Questionnaire = ({ questionnaire }: QuestionnaireProps) => {
             onAnswer={() => setCurrentQuestionIndex((index) => index + 1)}
           />
         ))}
+
+      {currentQuestionIndex >= questionnaire.length && (
+        <Rafle initialName={initialName} />
+      )}
     </div>
   );
 };
