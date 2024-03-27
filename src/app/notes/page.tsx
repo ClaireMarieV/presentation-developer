@@ -102,12 +102,115 @@ const presentationNotes = {
       <li>
         En tous cas, pas jusque récemment (Dassault Systèmes, Worldline, Talend)
       </li>
+      <li>Bon, on s&apos;éloigne du sujet, et clairement ça ne marche pas</li>
+      <li>Donc on va regarder ce que vous vous en pensez</li>
+    </ul>
+  ),
+  6: (
+    <ul>
+      <li>Expliquer les résultats</li>
+      <li>
+        <strong>Si comme prévu :</strong>
+      </li>
+      <li>
+        Le resenti de ce que <em>devrait</em> être un développeur ne correspond
+        pas à la réalité
+      </li>
+      <li>Nous avons laissé la main sur la définition de notre métier</li>
+      <li>Ce sont donc surtout les employeurs qui ont décidé du sens</li>
+      <li>Et forcément ça nous cantonne à des rôles d&apos;exécutants</li>
+      <li>
+        <strong>
+          Si <em>pas</em> comme prévu :
+        </strong>
+      </li>
+      <li>Improviser 😄</li>
+      <li></li>
+      <li>Pour conclure : Du coup, c&apos;est quoi une développeuse ?</li>
+      <li>
+        <strong>FAIRE UNE PAUSE AVANT DE PASSER A LA SLIDE SUIVANTE</strong>
+      </li>
+      <li>
+        La langue française est une langue vivante, elle change en fonction des
+        lieux, des époques des générations. Elle apartient à tout le monde, et
+        on peut décider d&apos;en faire ce qu&apos;on veut. Si je veux utiliser
+        le féminin comme forme neutre je peux. Si ça te dérange, tu sais ce que
+        ressentent les femmes au quotidien.
+      </li>
+    </ul>
+  ),
+  7: (
+    <ul>
+      <li>On a la définition scolaire</li>
+      <li>On a la définition historique, par l&apos;exemple</li>
+      <li>On a votre définition</li>
+      <li>On a votre quotidien</li>
+
+      <li>
+        <strong>Si comme prévu :</strong>
+      </li>
+      <li>On voit qu&apos;il y a une définition qui se détache du lot</li>
+      <li>Donc pour résumer</li>
+    </ul>
+  ),
+  8: (
+    <ul>
+      <li>Il créé et maintient des programmes</li>
+      <li>Mais surtout</li>
+      <li>C&apos;est un professionnel</li>
+      <li>Et en particulier</li>
+      <li>C&apos;est un prolétaire</li>
+      <li>
+        Pour rappel, la définition : Personne qui ne possède pour vivre que les
+        revenus que lui procure une activité salariée.
+      </li>
+      <li>Là vous vous demandez d&apos;où ça sort</li>
+      <li>On est tous fier de notre métier, de notre savoir faire</li>
+      <li>
+        Nous avons une connaissance technique qui n&apos;est pas facile à saisir
+      </li>
+      <li>
+        Mais il faut bien réaliser qu&apos;on reste des gens dont la seule force
+        est notre force de travail
+      </li>
+      <li>
+        <strong>FAIRE UNE PAUSE AVANT DE PASSER A LA SLIDE SUIVANTE</strong>
+      </li>
+      <li>Là où je veux en venir</li>
+    </ul>
+  ),
+  9: (
+    <ul>
+      <li>Il faut considérer son métier comme un métier</li>
+      <li>Bien sur, pour beaucoup c&apos;est une passion</li>
+      <li>Sinon vous ne seriez pas en train de faire des heures sup ici 😄</li>
+      <li>Mais on sait tous que c&apos;est un boulot</li>
+      <li>Et il faut le traiter comme tel</li>
+      <li>
+        Et dans cet espace de travail, il ne faut pas hésiter à gérer sa
+        carrière
+      </li>
+      <li>
+        Il faut trouver ce qu&apos;on aime, ce qu&apos;on veut faire, ce à quoi
+        on est bon
+      </li>
+      <li>Il faut pousser pour faire ça, ça doit être une démarche active</li>
+      <li>
+        Donc n&apos;hésitez pas à être clair à votre prochain 1-1 quand à ce que
+        vous attendez de l&apos;entreprise qui vous emploi
+      </li>
+      <li>Voilà, merci</li>
+    </ul>
+  ),
+  10: (
+    <ul>
+      <li>Des questions ?</li>
     </ul>
   ),
 };
 
 const Notes = () => {
-  const { page, slide, notes } = useNotes({ notes: presentationNotes });
+  const { page, notes } = useNotes({ notes: presentationNotes });
 
   return (
     <main className={style.page}>

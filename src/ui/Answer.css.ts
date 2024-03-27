@@ -10,6 +10,7 @@ export const wrapper = style({
 
 export const respondants = style({
   display: "flex",
+  flexDirection: "row",
   justifyContent: "space-between",
   width: "100%",
   fontSize: "1.5rem",
@@ -23,6 +24,7 @@ export const question = style({
 
 export const questionHeader = style({
   display: "flex",
+  flexDirection: "row",
   justifyContent: "space-between",
   fontWeight: 500,
 });
@@ -39,6 +41,7 @@ export const percentage = createVar();
 
 export const answer = style({
   display: "flex",
+  flexDirection: "row",
   justifyContent: "space-between",
   padding: theme.spacing.small,
   selectors: {

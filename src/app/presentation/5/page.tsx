@@ -5,11 +5,12 @@ import Points from "@/ui/Points";
 import Sources from "@/ui/Sources";
 
 const Slide = () => {
-  const { atleast } = useSlide(["no data", "bull"]);
+  const { slide, atleast } = useSlide(["no data", "bull"]);
 
   return (
     <>
-      <Points points={["😔"]} />
+      {slide === "no data" && <Points points={["😔"]} />}
+      {slide === "bull" && <Points points={["Bull"]} />}
 
       <Sources
         sources={[

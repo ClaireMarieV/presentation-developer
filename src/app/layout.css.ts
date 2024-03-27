@@ -9,6 +9,12 @@ globalStyle("h1, h2, h3, h4, h5, h6, p", {
 
 globalStyle("ul, li", {
   all: "unset",
+  display: "flex",
+  flexDirection: "column",
+});
+
+globalStyle("li", {
+  display: "block",
 });
 
 globalStyle("h1", {
