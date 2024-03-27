@@ -13,19 +13,46 @@ const presentationNotes = {
         pour la présentation
       </li>
       <li>A la fin, il y a un ticket pour une conférence à gagner</li>
-      <li>Personne ne va être concentré du coup mais bon 🤷</li>
-      <li>On va se pencher sur la définition d&apos;un développeur</li>
+      <li>Le gagnant sera tiré au sort à la fin de la présentation</li>
+      <li>Restez concentrés sur la présentation quand même 😄</li>
+      <li>
+        Bon, donc on va se pencher sur la définition d&apos;un développeur
+      </li>
     </ul>
   ),
   2: (
     <ul className={style.list}>
-      <li>Le mot développeur est un anglicisme</li>
+      <li>Fun fact: le mot développeur est un anglicisme</li>
+      <li>En regardant Wiktionnaire, ça nous donne ça</li>
+      <li>
+        Personne chargée des développements, de la programmation, dans un projet
+        informatique.
+      </li>
+      <li>Bon, ok, mais du coup c&apos;est quoi un développement ?</li>
+      <li>
+        Action de développer, de se développer ou résultat de cette action, au
+        propre et au figuré.
+      </li>
+      <li>Développer ça veut dire quoi ?</li>
+      <li>Réaliser, implanter, implémenter (un programme).</li>
+      <li>
+        Ca nous avance pas trop, alors on va regarder ce que c&apos;est la
+        programmation
+      </li>
+      <li>Réalisation d&apos;un programme informatique</li>
+      <li>Et l&apos;informatique ?</li>
+      <li>Science du traitement automatique de l’information.</li>
+      <li>Ok, donc ça nous donne</li>
     </ul>
   ),
   3: (
     <ul className={style.list}>
+      <li>
+        Personne chargée de la réalisation d&apos;un programme de traitement
+        automatique de l&apos;information
+      </li>
+      <li>Je ne sais pas pour vous mais</li>
       <li>La définition n&apos;est pas super satisfaisante</li>
-      <li>(Montrer les résultats du questionnaire)</li>
       <li>C&apos;est le problème des définitions</li>
       <li>
         La définition d&apos;un mot au moyen d&apos;autres mots mène à une
